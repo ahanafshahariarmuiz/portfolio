@@ -67,6 +67,9 @@ export const metadata: Metadata = {
     icon: [{ url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" }],
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
   },
+  verification: {
+    google: "Z7PsY4ZOW5MBFeOaQfHWJFBJTxBN21HiqGwnG-wszG8",
+  },
 };
 
 export default function RootLayout({
