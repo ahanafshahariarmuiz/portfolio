@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 export const poppins = Poppins({
   subsets: ["latin"],
@@ -8,7 +9,7 @@ export const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
-const BASE_URL = "https://ahnafshahriarmuiz.com/"; // ← replace with your actual domain
+const BASE_URL = "https://ahnafshahriarmuiz.com/";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
@@ -62,6 +63,10 @@ export const metadata: Metadata = {
   },
   authors: [{ name: "Ahnaf Shahriar Muiz", url: BASE_URL }],
   creator: "Ahnaf Shahriar Muiz",
+  icons: {
+    icon: [{ url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" }],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+  },
 };
 
 export default function RootLayout({
@@ -74,7 +79,10 @@ export default function RootLayout({
       lang="en"
       className={`${poppins.className} h-full antialiased bg-orange-50`}
     >
-      <body>{children}</body>
+      <body>
+        <Analytics />
+        {children}
+      </body>
     </html>
   );
 }
