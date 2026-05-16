@@ -84,9 +84,9 @@ export default function RootLayout({
       className={`${poppins.className} h-full antialiased bg-orange-50`}
     >
       <body>
+        {children}
         <Analytics />
         <SpeedInsights />
-        {children}
       </body>
     </html>
   );
